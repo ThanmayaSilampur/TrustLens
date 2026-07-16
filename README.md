@@ -2,7 +2,8 @@
   # TrustLens web application design
 
   This is a code bundle for TrustLens web application design. The original project is available at .
-  trustlens1.vercel.app
+
+  https://trustlens1-7mx1n2qsk-thanmaya.vercel.app
 
   ## Running the code
 

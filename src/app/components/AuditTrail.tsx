@@ -344,7 +344,7 @@ export function AuditTrail() {
           </div>
         </div>
 
-        <div className="overflow-x-auto border border-slate-800/80 rounded-xl bg-slate-950/20">
+        <div className="overflow-x-auto border border-slate-800/80 rounded-xl bg-slate-950">
           <table className="w-full text-left border-collapse">
             <thead>
               <tr style={{ borderBottom: "1px solid var(--border-subtle)", background: "rgba(255,255,255,0.015)" }}>
@@ -428,7 +428,7 @@ export function AuditTrail() {
           </div>
         ) : (
           <>
-            <div className="bg-slate-950/80 border border-slate-800 rounded-xl p-4 font-mono text-xs overflow-x-auto">
+            <div className="bg-slate-950 border border-slate-800 rounded-xl p-4 font-mono text-xs overflow-x-auto">
               {eventLogs.slice(0, displayedEvents).map((log, index) => {
                 const badgeClass =
                   log.level === "CRITICAL"

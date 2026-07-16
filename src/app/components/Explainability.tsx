@@ -79,7 +79,7 @@ export function Explainability() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
           <div className="p-4 rounded-xl border" style={{ background: "rgba(59,130,246,0.06)", borderColor: "rgba(59,130,246,0.2)" }}>
-            <p className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: "#93c5fd" }}>
+            <p className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: "var(--chart-1)" }}>
               Primary Factor
             </p>
             <p className="font-bold text-sm" style={{ color: "var(--text-primary)" }}>
@@ -87,7 +87,7 @@ export function Explainability() {
             </p>
           </div>
           <div className="p-4 rounded-xl border" style={{ background: "rgba(139,92,246,0.06)", borderColor: "rgba(139,92,246,0.2)" }}>
-            <p className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: "#c084fc" }}>
+            <p className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: "var(--chart-2)" }}>
               Supporting Evidence
             </p>
             <p className="font-bold text-sm" style={{ color: "var(--text-primary)" }}>
@@ -95,7 +95,7 @@ export function Explainability() {
             </p>
           </div>
           <div className="p-4 rounded-xl border" style={{ background: "rgba(16,185,129,0.06)", borderColor: "rgba(16,185,129,0.2)" }}>
-            <p className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: "#6ee7b7" }}>
+            <p className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: "var(--chart-3)" }}>
               Cross-Checked
             </p>
             <p className="font-bold text-sm" style={{ color: "var(--text-primary)" }}>
@@ -116,7 +116,7 @@ export function Explainability() {
             <ShieldAlert className="w-4.5 h-4.5 text-amber-400" />
           </div>
           <div>
-            <h2 className="text-sm font-bold mb-2" style={{ color: "#fcd34d" }}>
+            <h2 className="text-sm font-bold mb-2" style={{ color: "var(--chart-4)" }}>
               Known Limitations
             </h2>
             <ul className="text-xs space-y-1.5 list-disc list-inside" style={{ color: "var(--text-secondary)" }}>
@@ -206,27 +206,27 @@ export function Explainability() {
                   <stop offset="100%" stopColor="#8b5cf6" stopOpacity={0.85} />
                 </linearGradient>
               </defs>
-              <CartesianGrid stroke="rgba(255, 255, 255, 0.05)" strokeDasharray="3 3" horizontal={false} />
+              <CartesianGrid stroke="var(--border-subtle)" strokeDasharray="3 3" horizontal={false} />
               <XAxis
                 type="number"
                 domain={[0, 100]}
-                stroke="#475569"
-                tick={{ fill: "#94a3b8", fontSize: 11 }}
+                stroke="var(--text-muted)"
+                tick={{ fill: "var(--text-secondary)", fontSize: 11 }}
                 tickFormatter={(v) => `${v}`}
               />
               <YAxis
                 dataKey="factor"
                 type="category"
                 width={140}
-                stroke="#475569"
-                tick={{ fill: "#94a3b8", fontSize: 11 }}
+                stroke="var(--text-muted)"
+                tick={{ fill: "var(--text-secondary)", fontSize: 11 }}
               />
               <Tooltip
                 contentStyle={{
-                  background: "rgba(14, 21, 37, 0.95)",
-                  borderColor: "rgba(255, 255, 255, 0.1)",
+                  background: "var(--bg-elevated)",
+                  borderColor: "var(--border-subtle)",
                   borderRadius: "10px",
-                  boxShadow: "0 4px 20px rgba(0,0,0,0.5)"
+                  boxShadow: "var(--shadow-card)"
                 }}
                 itemStyle={{ color: "var(--text-primary)" }}
                 labelStyle={{ color: "var(--text-secondary)", fontWeight: "bold" }}
@@ -261,13 +261,13 @@ export function Explainability() {
                     style={{
                       background: "rgba(59,130,246,0.12)",
                       border: "1px solid rgba(59,130,246,0.35)",
-                      color: "#93c5fd",
+                      color: "var(--primary)",
                       boxShadow: "0 0 10px rgba(59,130,246,0.2)"
                     }}>
                     {index + 1}
                   </div>
                   {index < reasoningTimeline.length - 1 && (
-                    <div className="w-[1px] h-full bg-slate-800 my-1"></div>
+                    <div className="w-[1px] h-full bg-slate-350 dark:bg-slate-800 my-1"></div>
                   )}
                 </div>
                 <div className="flex-1 pb-4">
@@ -327,10 +327,10 @@ export function Explainability() {
                   </Pie>
                   <Tooltip
                     contentStyle={{
-                      background: "rgba(14, 21, 37, 0.95)",
-                      borderColor: "rgba(255, 255, 255, 0.1)",
+                      background: "var(--bg-elevated)",
+                      borderColor: "var(--border-subtle)",
                       borderRadius: "10px",
-                      boxShadow: "0 4px 20px rgba(0,0,0,0.5)"
+                      boxShadow: "var(--shadow-card)"
                     }}
                     itemStyle={{ color: "var(--text-primary)" }}
                   />

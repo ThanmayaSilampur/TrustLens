@@ -342,7 +342,7 @@ export function Explainability() {
               {trustScoreData.map((item) => {
                 const info = getConfidence(item.value);
                 return (
-                  <div key={item.name} className="flex items-center justify-between gap-3 p-2 rounded-lg" style={{ background: "rgba(255,255,255,0.01)" }}>
+                  <div key={item.name} className="flex items-center justify-between gap-3 p-2 rounded-lg" style={{ background: "var(--secondary)", border: "1px solid var(--border-subtle)" }}>
                     <div className="flex items-center gap-2 min-w-0">
                       <div
                         className="w-2.5 h-2.5 rounded-full flex-shrink-0"
@@ -403,13 +403,19 @@ export function Explainability() {
                 <div
                   key={alt.title}
                   className="p-3 rounded-xl border"
-                  style={{ background: "rgba(255,255,255,0.015)", borderColor: "var(--border-subtle)" }}
+                  style={{ background: "var(--secondary)", borderColor: "var(--border-subtle)" }}
                 >
                   <div className="flex items-center justify-between mb-1.5">
                     <p className="font-semibold text-xs" style={{ color: "var(--text-primary)" }}>
                       {alt.title}
                     </p>
-                    <span className="text-[10px] px-2 py-0.5 rounded-full border border-slate-700 bg-slate-800/30 text-slate-300 font-semibold">
+                    <span className={`text-[10px] px-2 py-0.5 rounded-full border font-semibold ${
+                      alt.likelihood.toLowerCase().includes("very unlikely") || alt.likelihood.toLowerCase().includes("unlikely")
+                        ? "badge-muted"
+                        : alt.likelihood.toLowerCase().includes("possible") || alt.likelihood.toLowerCase().includes("likely")
+                        ? "badge-warning"
+                        : "badge-success"
+                    }`}>
                       {alt.likelihood}
                     </span>
                   </div>

@@ -374,7 +374,7 @@ function BrandName({ visible }: { visible: boolean }) {
                 fontWeight: 800,
                 letterSpacing: "-0.02em",
                 fontFamily: "Inter, system-ui, sans-serif",
-                background: `linear-gradient(135deg, #ffffff 30%, ${CONFIG.accentA} 70%, ${CONFIG.accentB} 100%)`,
+                background: `linear-gradient(135deg, var(--text-primary) 30%, ${CONFIG.accentA} 70%, ${CONFIG.accentB} 100%)`,
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 display: "inline-block",
@@ -519,10 +519,10 @@ function StatBadges({ visible }: { visible: boolean }) {
               style={{
                 display: "flex", alignItems: "center", gap: 5,
                 padding: "4px 10px", borderRadius: 20,
-                background: "rgba(59,130,246,0.06)",
-                border: "1px solid rgba(59,130,246,0.18)",
+                background: "var(--secondary)",
+                border: "1px solid var(--border-subtle)",
                 fontSize: 10, fontWeight: 600, letterSpacing: "0.05em",
-                color: "rgba(147,197,253,0.75)",
+                color: "var(--text-secondary)",
                 fontFamily: "Inter, system-ui, sans-serif",
               }}
             >
@@ -580,6 +580,8 @@ export function SplashScreen() {
             alignItems: "center", justifyContent: "center",
             zIndex: 9999,
             perspective: 1000,
+            background: "var(--gradient-bg)",
+            transition: "background 0.3s ease",
           }}
         >
           {/* Canvas starfield */}
@@ -598,22 +600,9 @@ export function SplashScreen() {
               display: "flex", flexDirection: "column",
               alignItems: "center", gap: 24,
               padding: "52px 64px",
-              background: "rgba(4,8,22,0.72)",
-              backdropFilter: "blur(32px)",
-              WebkitBackdropFilter: "blur(32px)",
-              borderRadius: 28,
-              border: "1px solid rgba(59,130,246,0.16)",
-              boxShadow: `0 0 0 1px rgba(255,255,255,0.04), 0 32px 80px rgba(0,0,0,0.7), 0 0 60px rgba(59,130,246,0.06)`,
               minWidth: 360, maxWidth: "90vw",
             }}
           >
-            {/* Top accent line */}
-            <div style={{
-              position: "absolute", top: 0, left: "15%", right: "15%", height: 1,
-              background: `linear-gradient(90deg, transparent, ${CONFIG.accentA}88, ${CONFIG.accentB}88, transparent)`,
-              borderRadius: 1,
-            }} />
-
             {/* Orbital rings (behind logo) */}
             <div style={{ position: "relative", width: 148, height: 148, display: "flex", alignItems: "center", justifyContent: "center" }}>
               <OrbitalRings />
@@ -648,12 +637,6 @@ export function SplashScreen() {
             {/* Stat badges */}
             <StatBadges visible={contentVisible} />
 
-            {/* Bottom accent line */}
-            <div style={{
-              position: "absolute", bottom: 0, left: "20%", right: "20%", height: 1,
-              background: `linear-gradient(90deg, transparent, ${CONFIG.accentB}55, transparent)`,
-              borderRadius: 1,
-            }} />
           </motion.div>
 
           {/* Corner HUD decorations */}

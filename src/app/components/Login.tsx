@@ -144,20 +144,7 @@ export function Login() {
         transition={{ type: "spring", stiffness: 260, damping: 28, delay: 0.1 }}
         className="relative z-10 w-full max-w-md mx-4"
       >
-        <div
-          style={{
-            background: "var(--bg-elevated)",
-            backdropFilter: "blur(28px)",
-            WebkitBackdropFilter: "blur(28px)",
-            border: "1px solid rgba(59,130,246,0.18)",
-            borderRadius: 24,
-            boxShadow: "0 0 80px rgba(59,130,246,0.12), 0 32px 64px rgba(0,0,0,0.3)",
-            transition: "background 0.3s ease",
-          }}
-        >
-          {/* Top scanning accent */}
-          <div style={{ height: 2, background: "linear-gradient(90deg, transparent, #3b82f6, #8b5cf6, transparent)", borderRadius: "24px 24px 0 0" }} />
-
+        <div>
           <div className="p-8">
             {/* ── Shield ──────────────────────────────────────────────────── */}
             <div className="flex justify-center mb-6">
@@ -209,7 +196,7 @@ export function Login() {
               <h1
                 className="text-2xl font-bold tracking-tight mb-1"
                 style={{
-                  background: "linear-gradient(135deg, #ffffff 30%, #93c5fd 100%)",
+                  background: "linear-gradient(135deg, var(--text-primary) 30%, #3b82f6 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
@@ -246,12 +233,12 @@ export function Login() {
                     placeholder="admin@trustlens.ai"
                     className="w-full pl-9 pr-4 py-2.5 text-sm rounded-xl outline-none transition-all"
                     style={{
-                      background: "rgba(255,255,255,0.03)",
-                      border: "1px solid rgba(255,255,255,0.1)",
+                      background: "var(--secondary)",
+                      border: "1px solid var(--border-subtle)",
                       color: "var(--text-primary)",
                     }}
                     onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(59,130,246,0.5)"; e.currentTarget.style.boxShadow = "0 0 0 3px rgba(59,130,246,0.08)"; }}
-                    onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)"; e.currentTarget.style.boxShadow = "none"; }}
+                    onBlur={(e) => { e.currentTarget.style.borderColor = "var(--border-subtle)"; e.currentTarget.style.boxShadow = "none"; }}
                   />
                 </div>
               </div>
@@ -276,12 +263,12 @@ export function Login() {
                     placeholder="Enter access code…"
                     className="w-full pl-9 pr-10 py-2.5 text-sm rounded-xl outline-none transition-all"
                     style={{
-                      background: "rgba(255,255,255,0.03)",
-                      border: "1px solid rgba(255,255,255,0.1)",
+                      background: "var(--secondary)",
+                      border: "1px solid var(--border-subtle)",
                       color: "var(--text-primary)",
                     }}
                     onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(59,130,246,0.5)"; e.currentTarget.style.boxShadow = "0 0 0 3px rgba(59,130,246,0.08)"; }}
-                    onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)"; e.currentTarget.style.boxShadow = "none"; }}
+                    onBlur={(e) => { e.currentTarget.style.borderColor = "var(--border-subtle)"; e.currentTarget.style.boxShadow = "none"; }}
                   />
                   <button
                     type="button"
@@ -362,7 +349,7 @@ export function Login() {
             </form>
 
             {/* ── Footer info ─────────────────────────────────────────────── */}
-            <div className="mt-6 pt-5" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+            <div className="mt-6 pt-5" style={{ borderTop: "1px solid var(--border-subtle)" }}>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-1.5">
                   <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" style={{ boxShadow: "0 0 5px #10b981" }} />

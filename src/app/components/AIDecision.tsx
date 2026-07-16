@@ -27,7 +27,7 @@ const SEVERITY_COLORS: Record<RecommendedAction["severity"], { border: string; b
   critical: { border: "rgba(239,68,68,0.35)",  bg: "rgba(239,68,68,0.07)",  chip: "linear-gradient(135deg,#ef4444,#f97316)", text: "#fca5a5", label: "Critical" },
   high:     { border: "rgba(245,158,11,0.35)", bg: "rgba(245,158,11,0.07)", chip: "linear-gradient(135deg,#f59e0b,#ef4444)", text: "#fcd34d", label: "High"     },
   medium:   { border: "rgba(59,130,246,0.35)", bg: "rgba(59,130,246,0.07)", chip: "linear-gradient(135deg,#3b82f6,#8b5cf6)", text: "#93c5fd",  label: "Medium"   },
-  low:      { border: "rgba(255,255,255,0.1)", bg: "rgba(255,255,255,0.03)",chip: "linear-gradient(135deg,#64748b,#94a3b8)", text: "#94a3b8",  label: "Low"      },
+  low:      { border: "var(--border-subtle)", bg: "var(--secondary)",chip: "linear-gradient(135deg,#64748b,#94a3b8)", text: "var(--text-muted)",  label: "Low"      },
 };
 
 // ─── Ask Why panel ─────────────────────────────────────────────────────────────
@@ -171,8 +171,8 @@ function ActionRow({ action }: { action: RecommendedAction }) {
               <button onClick={() => setWhyOpen(v => !v)}
                 className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-150"
                 style={{
-                  background: whyOpen ? "rgba(59,130,246,0.15)" : "rgba(255,255,255,0.04)",
-                  border: whyOpen ? "1px solid rgba(59,130,246,0.3)" : "1px solid rgba(255,255,255,0.08)",
+                  background: whyOpen ? "rgba(59,130,246,0.15)" : "var(--secondary)",
+                  border: whyOpen ? "1px solid rgba(59,130,246,0.3)" : "1px solid var(--border-subtle)",
                   color: whyOpen ? "#93c5fd" : "var(--text-muted)",
                 }}>
                 <HelpCircle size={12} /> Ask Why {whyOpen ? <ChevronUp size={10} /> : <ChevronDown size={10} />}
@@ -261,7 +261,7 @@ export function AIDecision() {
             { label: "Risk Score",    value: `${threatSummary.riskScore} / 10`, icon: AlertTriangle, color: "#fcd34d", iconBg: "rgba(245,158,11,0.12)", iconBorder: "rgba(245,158,11,0.25)" },
           ].map(({ label, value, icon: Icon, color, iconBg, iconBorder }) => (
             <div key={label} className="rounded-xl p-4"
-              style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}>
+              style={{ background: "var(--secondary)", border: "1px solid var(--border-subtle)" }}>
               <div className="flex items-center justify-between mb-2">
                 <span className="text-xs" style={{ color: "var(--text-muted)" }}>{label}</span>
                 <div className="w-6 h-6 rounded-lg flex items-center justify-center"
@@ -273,7 +273,7 @@ export function AIDecision() {
             </div>
           ))}
           <div className="rounded-xl p-4"
-            style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}>
+            style={{ background: "var(--secondary)", border: "1px solid var(--border-subtle)" }}>
             <p className="text-xs mb-2" style={{ color: "var(--text-muted)" }}>Confidence</p>
             <ConfidenceHero percent={threatSummary.confidence} />
           </div>
@@ -281,11 +281,11 @@ export function AIDecision() {
 
         {/* AI Summary */}
         <div className="rounded-xl p-4 mb-4"
-          style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
+          style={{ background: "var(--secondary)", border: "1px solid var(--border-subtle)" }}>
           <h3 className="font-semibold text-sm mb-2" style={{ color: "var(--text-primary)" }}>AI Summary</h3>
           <p className="text-sm leading-relaxed mb-3" style={{ color: "var(--text-secondary)" }}>{threatSummary.description}</p>
           <div className="flex items-start gap-2 text-xs italic mb-4 rounded-lg px-3 py-2"
-            style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)", color: "var(--text-muted)" }}>
+            style={{ background: "var(--muted)", border: "1px solid var(--border-subtle)", color: "var(--text-muted)" }}>
             <Database size={13} style={{ flexShrink: 0, marginTop: 1 }} />
             <span>{threatSummary.sources}</span>
           </div>
@@ -339,7 +339,7 @@ export function AIDecision() {
         </div>
 
         <div className="flex flex-wrap items-center gap-3 mt-6 pt-5"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+          style={{ borderTop: "1px solid var(--border-subtle)" }}>
           <button
             onClick={() => navigate("/explainability")}
             className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-white transition-all duration-200"

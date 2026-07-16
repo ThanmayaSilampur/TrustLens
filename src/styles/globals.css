@@ -104,6 +104,87 @@
   --sidebar-ring:               rgba(59,130,246,0.4);
 }
 
+/* ── Light Theme Overrides ────────────────────────────────────────────────── */
+html.light {
+  /* App shell */
+  --bg-base:       #f0f4f8;
+  --bg-surface:    #e8edf4;
+  --bg-elevated:   #ffffff;
+  --bg-card:       rgba(255,255,255,0.85);
+  --bg-card-hover: rgba(255,255,255,0.95);
+
+  /* Sidebar */
+  --sidebar-bg:     rgba(255,255,255,0.92);
+  --sidebar-border: rgba(0,0,0,0.08);
+  --sidebar-glow:   rgba(59,130,246,0.08);
+
+  /* Text */
+  --text-primary:   #0f172a;
+  --text-secondary: #334155;
+  --text-muted:     #64748b;
+
+  /* Borders */
+  --border-subtle: rgba(0,0,0,0.08);
+  --border-glow:   rgba(59,130,246,0.25);
+
+  /* Gradients */
+  --gradient-bg: linear-gradient(160deg, #e8f0fe 0%, #f0f4ff 50%, #e8edf8 100%);
+
+  /* Shadows */
+  --shadow-sm:   0 1px 3px rgba(0,0,0,0.08);
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.08);
+  --glow-brand:    0 0 20px rgba(59,130,246,0.12);
+  --glow-brand-lg: 0 0 40px rgba(59,130,246,0.1), 0 0 80px rgba(139,92,246,0.06);
+
+  /* shadcn tokens */
+  --background:         #f0f4f8;
+  --foreground:         #0f172a;
+  --card:               rgba(255,255,255,0.85);
+  --card-foreground:    #0f172a;
+  --popover:            #ffffff;
+  --popover-foreground: #0f172a;
+  --primary:            #2563eb;
+  --primary-foreground: #ffffff;
+  --secondary:          rgba(0,0,0,0.04);
+  --secondary-foreground: #0f172a;
+  --muted:              rgba(0,0,0,0.04);
+  --muted-foreground:   #64748b;
+  --accent:             rgba(59,130,246,0.1);
+  --accent-foreground:  #2563eb;
+  --destructive:        #dc2626;
+  --destructive-foreground: #ffffff;
+  --border:             rgba(0,0,0,0.08);
+  --input:              rgba(0,0,0,0.05);
+  --input-background:   rgba(0,0,0,0.04);
+  --ring:               rgba(59,130,246,0.3);
+
+  /* Sidebar tokens */
+  --sidebar:                    rgba(255,255,255,0.92);
+  --sidebar-foreground:         #0f172a;
+  --sidebar-primary:            #2563eb;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent:             rgba(59,130,246,0.08);
+  --sidebar-accent-foreground:  #2563eb;
+  --sidebar-border:             rgba(0,0,0,0.08);
+  --sidebar-ring:               rgba(59,130,246,0.3);
+}
+
+/* ── Light mode utility overrides ─────────────────────────────────────────── */
+html.light .glass {
+  background: rgba(255,255,255,0.75);
+  border-color: rgba(0,0,0,0.08);
+}
+html.light .glass-strong {
+  background: rgba(255,255,255,0.88);
+  border-color: rgba(0,0,0,0.1);
+}
+html.light ::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.15);
+}
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(59,130,246,0.4);
+}
+
 /* ── Base ─────────────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -120,6 +201,7 @@ body {
   color: var(--text-primary);
   min-height: 100vh;
   overflow-x: hidden;
+  transition: background 0.3s ease, color 0.2s ease;
 }
 
 /* ── Scrollbar ────────────────────────────────────────────────────────────── */

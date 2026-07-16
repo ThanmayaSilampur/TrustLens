@@ -11,6 +11,7 @@ import {
 import { useEffect } from "react";
 import { AIAssistant } from "./AIAssistant";
 import { IncidentStoreProvider } from "../lib/incidentStore";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
   { to: "/",              end: true,  icon: FileText,  label: "Log Analysis",    desc: "Parse & upload logs"   },
@@ -65,10 +66,11 @@ export function Layout() {
           style={{
             width: 240,
             flexShrink: 0,
-            background: "rgba(8,13,26,0.85)",
+            background: "var(--sidebar-bg)",
             backdropFilter: "blur(24px)",
             WebkitBackdropFilter: "blur(24px)",
-            borderRight: "1px solid rgba(255,255,255,0.07)",
+            borderRight: "1px solid var(--sidebar-border)",
+            transition: "background 0.3s ease, border-color 0.3s ease",
           }}
         >
           {/* Logo */}
@@ -186,7 +188,9 @@ export function Layout() {
           </nav>
 
           {/* Footer */}
-          <div className="px-4 py-4" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+          <div className="px-4 py-4" style={{ borderTop: "1px solid var(--border-subtle)" }}>
+            {/* Theme Toggle */}
+            <ThemeToggle />
             <div className="flex items-center gap-2 mb-3">
               <div className="rounded-lg p-1.5" style={{ background: "rgba(59,130,246,0.12)", border: "1px solid rgba(59,130,246,0.2)" }}>
                 <Shield size={13} style={{ color: "#60a5fa" }} />

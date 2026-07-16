@@ -133,7 +133,7 @@ export function Login() {
   return (
     <div
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
-      style={{ background: "linear-gradient(135deg, #020818 0%, #060d1f 40%, #0a0d20 100%)" }}
+      style={{ background: "var(--gradient-bg)", transition: "background 0.3s ease" }}
     >
       <Particles />
 
@@ -146,12 +146,13 @@ export function Login() {
       >
         <div
           style={{
-            background: "rgba(8,13,30,0.88)",
+            background: "var(--bg-elevated)",
             backdropFilter: "blur(28px)",
             WebkitBackdropFilter: "blur(28px)",
             border: "1px solid rgba(59,130,246,0.18)",
             borderRadius: 24,
-            boxShadow: "0 0 80px rgba(59,130,246,0.12), 0 32px 64px rgba(0,0,0,0.6)",
+            boxShadow: "0 0 80px rgba(59,130,246,0.12), 0 32px 64px rgba(0,0,0,0.3)",
+            transition: "background 0.3s ease",
           }}
         >
           {/* Top scanning accent */}
